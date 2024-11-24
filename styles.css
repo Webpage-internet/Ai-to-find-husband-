@@ -21,9 +21,8 @@ body {
   background: linear-gradient(135deg, #ff9aa2, #ffdde1); /* Soft pink gradient */
 }
 
-/* Lock Screen */
 #lock-screen {
-  background: #ffcccb; /* Soft pink */
+  background: #ffcccb;
   border-radius: 10px;
   padding: 20px;
   width: 300px;
@@ -40,7 +39,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Top Image Frame */
 .top-image-frame {
   margin: 20px auto;
   width: 90%;
@@ -61,7 +59,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Image Showcase Styles */
 .frames-container {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +68,6 @@ body {
   max-width: 1200px;
 }
 
-/* Frame Styles */
 .frame {
   background-color: white;
   border: 5px solid #ddd;
@@ -87,24 +83,9 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.frame a:hover img {
+.frame img:hover {
   transform: scale(1.05);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Pop-Up Animation */
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  font-size: 18px;
-  color: #ff4c4c;
-  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
