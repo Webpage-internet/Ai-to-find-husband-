@@ -9,9 +9,6 @@ document.getElementById('unlock-btn').addEventListener('click', function () {
     document.getElementById('lock-screen').setAttribute('aria-hidden', 'true');
     document.getElementById('photo-showcase').setAttribute('aria-hidden', 'false');
 
-    // Save state in localStorage
-    localStorage.setItem('unlocked', 'true');
-
     // Display a pop-up
     const popupText = password === 'afzal' ? 'I love you!' : 'Mahira Afzal loves you so much!';
     createPopup(popupText);
@@ -62,10 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
       lockShowcase();
     }, 15000); // 15 seconds
   }
-});
-
-// Reset the page if the user navigates away or closes the tab
-window.addEventListener('beforeunload', function () {
-  // Clear the unlocked state from localStorage
-  localStorage.removeItem('unlocked');
 });
