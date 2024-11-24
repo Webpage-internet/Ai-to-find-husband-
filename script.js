@@ -63,3 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 15000); // 15 seconds
   }
 });
+
+// Reset the page if the user navigates away or closes the tab
+window.addEventListener('beforeunload', function () {
+  // Clear the unlocked state from localStorage
+  localStorage.removeItem('unlocked');
+});
