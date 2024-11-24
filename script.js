@@ -1,6 +1,6 @@
 document.getElementById('unlock-btn').addEventListener('click', function () {
   const password = document.getElementById('password').value.trim().toLowerCase();
-  const validPasswords = ["afzal", "mahira"]; 
+  const validPasswords = ["afzal", "mahira","mahira faisal"]; 
 
   if (validPasswords.includes(password)) {
     // Unlock the showcase
