@@ -32,11 +32,70 @@ body {
 }
 
 #lock-screen input, #lock-screen button {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Highlight effect for input and button */
 #lock-screen input:focus, #lock-screen button:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.7); /* Glowing effect */
+  background-color: #ffebeb; /* Light background when focused */
+}
+
+/* Lock screen input field */
+#lock-screen input {
+  border: 2px solid #ff4c4c; /* Red border */
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 10px 0;
+}
+
+/* Lock screen button */
+#lock-screen button {
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Style for the "Unlock" button on hover */
+#lock-screen button:hover {
+  background-color: #ff1f1f;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.9); /* Glowing effect on hover */
+}
+
+/* View count and reset button styles */
+#view-count {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#reset-view {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#reset-view:hover {
+  background-color: #ff1f1f;
 }
 
 .top-image-frame {
