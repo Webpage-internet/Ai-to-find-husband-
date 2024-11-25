@@ -22,10 +22,10 @@ document.getElementById('unlock-btn').addEventListener('click', function () {
     const popupText = password === 'afzal' ? 'I love you!' : 'Mahira Afzal loves you so much!';
     createPopup(popupText);
 
-    // Lock again after 15 seconds
+    // Lock again after 2 minutes 
     setTimeout(() => {
       lockShowcase();
-    }, 15000); // 15 seconds
+    }, 120000); // 2 minutes 
   } else {
     document.getElementById('error-msg').textContent = "Incorrect name. Please try again!";
   }
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lock-screen').classList.add('hidden');
     document.getElementById('photo-showcase').classList.remove('hidden');
 
-    // Automatically lock again after 15 seconds
+    // Automatically lock again after 2 minutes 
     setTimeout(() => {
       lockShowcase();
-    }, 15000); // 15 seconds
+    }, 120000); // 2 minutes 
   }
 });
