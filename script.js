@@ -50,6 +50,13 @@ document.getElementById('unlock-btn').addEventListener('click', function () {
   }
 });
 
+  // Reset the password input
+  document.getElementById('password').value = "";
+  document.getElementById('error-msg').textContent = "";
+
+  // Remove the unlocked state from localStorage
+  localStorage.removeItem('unlocked');
+
 // Reset view button functionality
 document.getElementById('reset-view').addEventListener('click', function () {
   const enteredPassword = prompt("Enter the password to reset views:");
