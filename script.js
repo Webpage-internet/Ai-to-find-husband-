@@ -45,17 +45,52 @@ document.getElementById('unlock-btn').addEventListener('click', function () {
     document.getElementById('photo-showcase').classList.remove('hidden');
     document.getElementById('lock-screen').setAttribute('aria-hidden', 'true');
     document.getElementById('photo-showcase').setAttribute('aria-hidden', 'false');
+
+    // Notify user before locking the showcase again
+    setTimeout(() => {
+      // Apply blur effect to the background
+      document.body.classList.add('blur-background');
+
+      // Create a bubble notification element and add to the page
+      const bubbleNotification = document.createElement('div');
+      bubbleNotification.className = 'bubble-notification';
+      bubbleNotification.textContent = "The showcase will lock in 10 seconds!";
+      document.body.appendChild(bubbleNotification);
+
+      // The bubble notification stays on the screen for 50 seconds before locking
+      setTimeout(() => {
+        // Remove blur effect and the bubble notification after 10 seconds
+        document.body.classList.remove('blur-background');
+        bubbleNotification.remove(); // Remove the bubble notification
+
+        // Lock the showcase
+        lockShowcase();
+      }, 10000); // Lock after 10 seconds (10,000 milliseconds)
+
+    }, 50000); // Notify after 50 seconds
+
   } else {
     document.getElementById('error-msg').textContent = "Incorrect name. Please try again!";
   }
-});
 
-  // Reset the password input
+  // Reset password field
   document.getElementById('password').value = "";
   document.getElementById('error-msg').textContent = "";
 
   // Remove the unlocked state from localStorage
   localStorage.removeItem('unlocked');
+});
+
+// Function to lock the showcase after timeout
+function lockShowcase() {
+  document.getElementById('lock-screen').classList.remove('hidden');
+  document.getElementById('photo-showcase').classList.add('hidden');
+  document.getElementById('lock-screen').setAttribute('aria-hidden', 'false');
+  document.getElementById('photo-showcase').setAttribute('aria-hidden', 'true');
+
+  // Reset the background color to default (or any other color you prefer)
+  document.body.style.backgroundColor = "";
+}
 
 // Reset view button functionality
 document.getElementById('reset-view').addEventListener('click', function () {
