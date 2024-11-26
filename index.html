@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo Showcase</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
   <!-- Lock Screen -->
@@ -16,12 +18,11 @@
     <p id="error-msg" aria-live="polite"></p>
   </div>
 
-    <!-- View count and reset button in top-right corner -->
-    <div id="view-count" class="view-count">
-      View Count: <span id="count-display">0</span>
-    </div>
-    <button id="reset-view" class="reset-view">Reset View</button>
+  <!-- View count and reset button in top-right corner -->
+  <div id="view-count" class="view-count">
+    View Count: <span id="count-display">0</span>
   </div>
+  <button id="reset-view" class="reset-view">Reset View</button>
 
   <!-- Image Showcase -->
   <div id="photo-showcase" class="hidden" aria-hidden="true">
